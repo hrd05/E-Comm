@@ -1,10 +1,15 @@
 
 // import { Container } from 'react-bootstrap';
-import { Fragment } from 'react';
+// import { Fragment } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavbarComponent from './components/Navbar/NavbarComponent';
 import AlbumList from './components/AlbumList';
 import CartProvider from './Store/CartProvider';
+// import { createBrowserRouter } from 'react-router-dom';
+import AboutPage from './components/Navbar/AboutPage';
+import Footer from './components/Footer';
+import Home from './components/Home';
 
 const productsArr = [
   {
@@ -33,14 +38,26 @@ const productsArr = [
   }
 ]
 
+// const router = createBrowserRouter([
+//   { path: '/store', element: <AlbumList /> },
+//   { path: '/about', element: <AboutPage /> }
+// ])
+
 
 function App() {
 
 
   return (
     <CartProvider >
-      <NavbarComponent />
-      <AlbumList productsArr={productsArr} />
+      <Router>
+        <NavbarComponent />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/store" element={<AlbumList productsArr={productsArr} />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+        <Footer />
+      </Router>
     </CartProvider>
   );
 }
