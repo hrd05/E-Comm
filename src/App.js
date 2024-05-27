@@ -10,6 +10,7 @@ import CartProvider from './Store/CartProvider';
 import AboutPage from './components/Navbar/AboutPage';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import ContactUs from './components/ContactUs';
 
 const productsArr = [
   {
@@ -52,6 +53,8 @@ function App() {
       <Router>
         <NavbarComponent />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/home" element={<Home />} />
           <Route path="/store" element={<AlbumList productsArr={productsArr} />} />
           <Route path="/about" element={<AboutPage />} />

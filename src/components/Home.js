@@ -4,7 +4,7 @@ import ConcertTable from "./ConcertTable";
 const Home = () => {
     return (
         <Container className="mt-3 d-flex flex-column align-items-center">
-            <h2 style={{ fontFamily: 'cursive' }} className="mb-3"> Tours</h2>
+            <h2 style={{ fontFamily: 'cursive' }} className="mt-4"> Tours</h2>
             <ConcertTable />
         </Container>
     )

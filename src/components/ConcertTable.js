@@ -1,4 +1,5 @@
 import React from 'react';
+import { Table } from 'react-bootstrap';
 
 const ConcertTable = () => {
     const concertData = [
@@ -11,15 +12,7 @@ const ConcertTable = () => {
     ];
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Venue</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+        <Table striped='rows' hover className='mt-3' >
             <tbody>
                 {concertData.map((concert, index) => (
                     <tr key={index}>
@@ -30,7 +23,7 @@ const ConcertTable = () => {
                     </tr>
                 ))}
             </tbody>
-        </table>
+        </Table>
     );
 }
 

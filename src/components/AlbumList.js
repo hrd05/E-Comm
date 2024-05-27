@@ -21,6 +21,7 @@ const AlbumList = (props) => {
     const addToCartHandler = (event) => {
         const itemIndex = cartCtx.cartItems.findIndex((item) => item.id === event.target.id);
         if (itemIndex < 0) {
+
             const item = props.productsArr.find((item) => item.id === event.target.id);
             item['quantity'] = 1;
             cartCtx.addToCart(item);
@@ -28,6 +29,7 @@ const AlbumList = (props) => {
         else {
             cartCtx.updateQuantityOfItem(event.target.id);
         }
+        alert(`Album added to Cart`);
     }
 
 

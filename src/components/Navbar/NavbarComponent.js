@@ -24,7 +24,6 @@ const NavbarComponent = () => {
         cartQuantity += Number(item.quantity);
     })
 
-    console.log(totalAmount);
 
     return (
         <>
@@ -45,6 +44,7 @@ const NavbarComponent = () => {
                         <Nav className="align-content-center mx-5">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/store">Store</Nav.Link>
+                            <Nav.Link as={Link} to="/contact-us">Contact Us</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
