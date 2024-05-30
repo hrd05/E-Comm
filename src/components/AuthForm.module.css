@@ -1,0 +1,74 @@
+/* AuthForm.css */
+.auth {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 25rem;
+  border-radius: 6px;
+  background-color: #f8f9fa; /* Light background color */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  color: #212529; /* Dark text color for contrast */
+}
+
+.auth h1 {
+  text-align: center;
+  color: #212529; /* Dark text color for contrast */
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  color: #212529; /* Dark text color for contrast */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  font: inherit;
+  background-color: #ffffff; /* White background for input */
+  color: #212529; /* Dark text for input */
+  border-radius: 4px;
+  border: 1px solid #ced4da; /* Light border color */
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #007bff; /* Primary button color */
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+
+.actions button:hover {
+  background-color: #0056b3; /* Darker shade for hover */
+  border-color: #0056b3;
+}
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #007bff; /* Primary color for toggle */
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #0056b3; /* Darker shade for hover */
+}

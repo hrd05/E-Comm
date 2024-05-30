@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
+
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -35,48 +36,52 @@ const ContactUs = () => {
     };
 
     return (
-        <Container>
-            <Row className="justify-content-md-center">
+        <Container className="d-flex justify-content-center align-items-center min-vh-100">
+            <Row className="justify-content-md-center w-100">
                 <Col md={6}>
-                    <h2>Contact Us</h2>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="formName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                placeholder="Enter your name"
-                            />
-                        </Form.Group>
+                    <Card className="shadow p-4">
+                        <Card.Body>
+                            <h2 className="text-center mb-4">Contact Us</h2>
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group controlId="formName" className='my-4'>
+                                    {/* <Form.Label>Name</Form.Label> */}
+                                    <Form.Control
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Enter your name"
+                                    />
+                                </Form.Group>
 
-                        <Form.Group controlId="formEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                placeholder="Enter your email"
-                            />
-                        </Form.Group>
+                                <Form.Group controlId="formEmail" className='my-4'>
+                                    {/* <Form.Label>Email</Form.Label> */}
+                                    <Form.Control
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="Enter your email"
+                                    />
+                                </Form.Group>
 
-                        <Form.Group controlId="formPhone">
-                            <Form.Label>Phone Number</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                placeholder="Enter your phone number"
-                            />
-                        </Form.Group>
+                                <Form.Group controlId="formPhone" className='my-4'>
+                                    {/* <Form.Label>Phone Number</Form.Label> */}
+                                    <Form.Control
+                                        type="text"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Enter your phone number"
+                                    />
+                                </Form.Group>
 
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
+                                <Button variant="dark" type="submit" className="w-100">
+                                    Submit
+                                </Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
                 </Col>
             </Row>
         </Container>
