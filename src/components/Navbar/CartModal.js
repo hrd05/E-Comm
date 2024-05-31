@@ -1,42 +1,26 @@
 import { Modal, Button, Image } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CartContext from "../../Store/cart-context";
+import AuthContext from "../../Store/auth-context";
+import { getCart } from "../../Utils/cartUtils";
 
-
-// const cartElements = [
-
-//     {
-//         id: '1',
-//         title: 'Colors',
-//         price: 100,
-//         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-//         quantity: 2,
-//     },
-//     {
-//         id: '2',
-//         title: 'Black and white Colors',
-//         price: 50,
-//         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-//         quantity: 3,
-//     },
-//     {
-//         id: '3',
-//         title: 'Yellow and Black Colors',
-//         price: 70,
-//         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-//         quantity: 1,
-//     }
-// ]
-// let q = 0;
-// cartElements.forEach((item) => {
-//     q += item.quantity;
-// })
 
 
 const CartModal = (props) => {
-    const cartCtx = useContext(CartContext);
+    const [cartItems, setCartItems] = useState([]);
+    // const cartCtx = useContext(CartContext);
+    const authCtx = useContext(AuthContext);
 
-    const cartList = cartCtx.cartItems.map((item) => (
+    useEffect(() => {
+        const fetchCart = async () => {
+            const items = await getCart(authCtx.email);
+            setCartItems(items);
+        }
+        fetchCart();
+    }, [authCtx.email, props.show])
+
+
+    const cartList = cartItems.map((item) => (
         <div key={item.id} className="d-flex align-items-center">
             <Image src={item.imageUrl} rounded style={{ width: '100px', height: '100px' }} />
             <div className="ms-3">

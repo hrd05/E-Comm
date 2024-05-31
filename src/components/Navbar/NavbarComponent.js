@@ -52,12 +52,12 @@ const NavbarComponent = () => {
                         </Nav>
                     </Navbar.Collapse>
                     {location.pathname !== '/about' && location.pathname !== '/contact-us' && (
-                        <Button variant="outline-light" onClick={handleShow}>
+                        <Button variant="outline-light" className="mx-2" onClick={handleShow}>
                             Cart <span className="badge bg-light text-dark">{cartQuantity}</span>
                         </Button>
                     )}
                     {authCtx.isLogin && (
-                        <Button variant="outline-light" onClick={authCtx.logout}>
+                        <Button variant="light" className="mx-2" onClick={authCtx.logout}>
                             Logout
                         </Button>
                     )}
@@ -66,7 +66,7 @@ const NavbarComponent = () => {
             {
                 location.pathname !== '/contact-us' &&
                 <div id="heading" className="mt-5 p-3">
-                    <h1 className="mt-4">GrooveNest <span>"Find Your Groove"</span></h1>
+                    {location.pathname === '/store' && <h1 className="mt-4">GrooveNest <span>"Find Your Groove"</span></h1>}
                     {location.pathname === '/home' && (
                         <>
                             <Button variant="outline-light" className="mt-3" >Get our Latest Album</Button><br />

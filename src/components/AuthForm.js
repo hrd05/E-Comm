@@ -55,6 +55,7 @@ const AuthForm = () => {
       .then((data) => {
         // console.log(data.idToken);
         authCtx.login(data.idToken);
+        localStorage.setItem('email', enteredEmail);
         navigate('/store');
       })
       .catch((err) => {
